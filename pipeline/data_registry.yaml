@@ -40,9 +40,10 @@ nodes:
   us30y:      { source: fred, series: DGS30,            transform: level, unit_changes: bp }
   t2s10s:     { source: fred, series: T10Y2Y,           transform: level, unit_changes: bp }
   cn10y:      { source: akshare, fn: bond_zh_us_rate,   column: "中国国债收益率10年", transform: level, unit_changes: bp }
-  r007:       { source: akshare, fn: repo_rate_hist,    code: R007,  transform: level, unit_changes: bp,
-                note: "银行间质押式回购; akshare接口若变更只改 fetchers.fetch_akshare" }
-  dr007:      { source: akshare, fn: repo_rate_hist,    code: DR007, transform: level, unit_changes: bp }
+  r007:       { source: akshare, fn: repo_rate_query, code: FR007, transform: level, unit_changes: bp,
+                note: "回购定盘利率FR007代理R007 (chinamoney官方, 接口已核验@akshare1.18)" }
+  dr007:      { source: akshare, fn: repo_rate_query, code: FDR007, transform: level, unit_changes: bp,
+                note: "银银间回购定盘利率FDR007代理DR007" }
   mlf:        { source: manual, value: 2.00, unit_changes: bp, note: "政策利率, 调整频率低, 调价时手工更新" }
   lpr:        { source: akshare, fn: macro_china_lpr,   column: "LPR1Y", transform: level, unit_changes: bp }
   sofr:       { source: fred, series: SOFR,             transform: level, unit_changes: bp }
@@ -74,8 +75,8 @@ nodes:
   cnpminew:   { source: manual, value: 50.2, unit_changes: idx,
                 note: "PMI新订单分项: 统计局月报发布, akshare无稳定分项接口, 每月手工更新一次或后续接Agent抓取" }
   indprod:    { source: akshare, fn: macro_china_industrial_production_yoy, transform: level, unit_changes: pp, freq: monthly }
-  retail:     { source: akshare, fn: macro_china_consumer_goods_retail,     transform: level, unit_changes: pp, freq: monthly }
-  fai:        { source: akshare, fn: macro_china_fixed_asset_investment,    transform: level, unit_changes: pp, freq: monthly }
+  retail:     { source: akshare, fn: macro_china_consumer_goods_retail, column: "同比增长", transform: level, unit_changes: pp, freq: monthly }
+  fai:        { source: akshare, fn: macro_china_gdzctz, column: "同比增长", transform: level, unit_changes: pp, freq: monthly }
   nfp:        { source: fred, series: PAYEMS, transform: mom_diff, unit_changes: idx, freq: monthly, scale: 1 }
   unemp:      { source: fred, series: UNRATE, transform: level, unit_changes: pp, freq: monthly }
   exports:    { source: akshare, fn: macro_china_exports_yoy, transform: level, unit_changes: pp, freq: monthly }
@@ -85,14 +86,15 @@ nodes:
                 note: "工业品需求合成指标: 铜/油20日动量z分 + PPI z分加权" }
 
   # ---------------- 流动性与信用 ----------------
-  m1:         { source: akshare, fn: macro_china_money_supply, column: "M1-同比", transform: level, unit_changes: pp, freq: monthly }
-  m2:         { source: akshare, fn: macro_china_money_supply, column: "M2-同比", transform: level, unit_changes: pp, freq: monthly }
-  tsf:        { source: akshare, fn: macro_china_shrzgm, column: "社融存量同比", transform: level, unit_changes: pp, freq: monthly }
+  m1:         { source: akshare, fn: macro_china_money_supply, column: "货币(M1)-同比增长", transform: level, unit_changes: pp, freq: monthly }
+  m2:         { source: akshare, fn: macro_china_money_supply, column: "货币和准货币(M2)-同比增长", transform: level, unit_changes: pp, freq: monthly }
+  tsf:        { source: akshare, fn: macro_china_shrzgm, transform: level, unit_changes: pp, freq: monthly,
+                note: "当前接口仅提供增量: 用12个月滚动求和同比代理存量增速, 逻辑在fetch_akshare内" }
   usfci:      { source: fred, series: NFCI,      transform: level, unit_changes: idx, freq: weekly }
   fedbs:      { source: fred, series: WALCL,     transform: level, unit_changes: pct, freq: weekly }
   rrp:        { source: fred, series: RRPONTSYD, transform: level, unit_changes: pct }
-  pboc:       { source: akshare, fn: macro_china_omo, transform: rolling_net_7d, unit_changes: idx,
-                note: "OMO净投放7日滚动; 接口若变更在fetchers调整" }
+  pboc:       { source: manual, value: 0, unit_changes: idx,
+                note: "akshare已无OMO接口: 暂手工维护, 或后续用Agent抓取央行官网公开市场公告" }
   riskappetite: { source: derived, unit_changes: idx,
                 formula: "-0.5*z20(vix) - 0.3*z20(hyspread) + 0.2*z20(em)",
                 note: "全球风险偏好合成: VIX/利差越低、EM越强 → 偏好越高" }
@@ -114,8 +116,8 @@ nodes:
                 note: "10年期国债期货主力连续" }
   convert:    { source: akshare, fn: stock_zh_index_daily, code: sh000832, transform: level, unit_changes: pct,
                 note: "中证转债指数" }
-  comidx:     { source: akshare, fn: futures_nh_price_index, code: NHCI, transform: level, unit_changes: pct,
-                note: "南华商品指数" }
+  comidx:     { source: akshare, fn: futures_index_ccidx, code: "中证商品期货指数", transform: level, unit_changes: pct,
+                note: "南华指数接口已下线, 改用中证商品期货指数 (口径等价)" }
   chipetf:    { source: akshare, fn: fund_etf_hist_em, code: "512760", transform: level, unit_changes: pct }
   bankidx:    { source: akshare, fn: stock_zh_index_daily, code: sz399986, transform: level, unit_changes: pct,
                 note: "中证银行指数" }

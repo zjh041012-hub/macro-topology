@@ -57,46 +57,113 @@ def fetch_yahoo(ticker: str, days: int) -> pd.Series:
     return col.dropna()
 
 
+def _parse_cn_month(x):
+    """东方财富口径 '2026年04月份'/'2026年4月' → Timestamp(月末)。其余格式交给 to_datetime。"""
+    import re as _re
+    m = _re.search(r"(\d{4})\s*年\s*(\d{1,2})\s*月", str(x))
+    if m:
+        return pd.Timestamp(int(m[1]), int(m[2]), 1) + pd.offsets.MonthEnd(0)
+    return pd.to_datetime(x, errors="coerce")
+
+
+def _pick_value_col(df: pd.DataFrame, date_col: str, prefer=None):
+    """优先取指定/常见数值列; 要求转数值后有效率>50%, 排除全NaN的文本列(2026-06首跑事故根因)。"""
+    candidates = ([prefer] if prefer else []) + ["今值", "收盘", "收盘价", "close", "value", "同比增长"]
+    for c in candidates:
+        if c and c in df.columns:
+            return c
+    for c in df.columns:
+        if c == date_col:
+            continue
+        v = pd.to_numeric(df[c], errors="coerce")
+        if v.notna().mean() > 0.5:
+            return c
+    raise ValueError(f"no numeric column in {list(df.columns)}")
+
+
 def fetch_akshare(cfg: dict, days: int) -> pd.Series:
-    """akshare 接口名偶有变更——所有兼容逻辑只写在这里。"""
+    """akshare 接口名偶有变更——所有兼容逻辑只写在这里。
+    接口名与列名已对照 akshare 1.18.64 逐一核验 (2026-06)。"""
     import akshare as ak
     fn, code, column = cfg["fn"], cfg.get("code"), cfg.get("column")
-    if fn == "bond_zh_us_rate":
-        df = ak.bond_zh_us_rate(start_date=(TODAY - dt.timedelta(days=days)).strftime("%Y%m%d"))
-        s = df.set_index("日期")[column]
-    elif fn == "repo_rate_hist":
-        df = ak.repo_rate_hist(start_date=(TODAY - dt.timedelta(days=days)).strftime("%Y%m%d"),
-                               end_date=TODAY.strftime("%Y%m%d"))
-        df = df[df["回购代码"].str.contains(code, na=False)] if "回购代码" in df else df
-        s = df.set_index("日期")["加权平均利率" if "加权平均利率" in df else df.columns[-1]]
-    elif fn == "macro_china_lpr":
-        df = ak.macro_china_lpr()
-        s = df.set_index("TRADE_DATE")["LPR1Y"]
-    elif fn == "macro_china_money_supply":
-        df = ak.macro_china_money_supply()
-        s = df.set_index("月份")[column]
-    elif fn == "stock_zh_index_daily":
-        df = ak.stock_zh_index_daily(symbol=code)
-        s = df.set_index("date")["close"]
-    elif fn == "fund_etf_hist_em":
-        df = ak.fund_etf_hist_em(symbol=code, period="daily", adjust="qfq")
-        s = df.set_index("日期")["收盘"]
-    elif fn == "futures_main_sina":
-        df = ak.futures_main_sina(symbol=code)
-        s = df.set_index("日期")["收盘价"]
-    elif fn == "futures_nh_price_index":
-        df = ak.futures_nh_price_index(symbol=code)
-        s = df.set_index("date")["value"]
-    elif fn == "macro_china_omo":
-        df = ak.macro_china_omo()  # 若接口名变更, 此处是唯一改动点
-        s = df.set_index("日期")["净投放"]
-    else:  # 通用单值月度宏观接口: macro_china_cpi_yearly / macro_usa_ism_pmi 等
-        df = getattr(ak, fn)()
-        date_col = next(c for c in df.columns if "日期" in str(c) or "时间" in str(c) or "date" in str(c).lower() or "月份" in str(c))
-        val_col = column or next(c for c in df.columns if c != date_col and pd.api.types.is_numeric_dtype(pd.to_numeric(df[c], errors="coerce")))
-        s = df.set_index(date_col)[val_col]
+
+    last_exc = None
+    for attempt in range(3):  # 东财/金十偶发断连, 重试2次
+        try:
+            if fn == "bond_zh_us_rate":
+                try:
+                    df = ak.bond_zh_us_rate(start_date=(TODAY - dt.timedelta(days=days)).strftime("%Y%m%d"))
+                except TypeError:  # 签名变更兜底
+                    df = ak.bond_zh_us_rate()
+                s = df.set_index("日期")[column]
+            elif fn == "repo_rate_query":
+                # 回购定盘利率 (chinamoney 官方): FR007 代理 R007, FDR007 代理 DR007
+                symbol = "银银间回购定盘利率" if code.startswith("FDR") else "回购定盘利率"
+                df = ak.repo_rate_query(symbol=symbol)
+                s = df.set_index("date")[code]
+            elif fn == "macro_china_lpr":
+                df = ak.macro_china_lpr()
+                dcol = "TRADE_DATE" if "TRADE_DATE" in df.columns else df.columns[0]
+                vcol = "LPR1Y" if "LPR1Y" in df.columns else _pick_value_col(df, dcol)
+                s = df.set_index(dcol)[vcol]
+            elif fn == "macro_china_money_supply":
+                # 实际列名: 货币(M1)-同比增长 / 货币和准货币(M2)-同比增长, 月份格式 '2026年04月份'
+                df = ak.macro_china_money_supply()
+                s = df.set_index(df["月份"].map(_parse_cn_month))[column]
+            elif fn == "macro_china_shrzgm":
+                # 当前接口只有'社会融资规模增量': 用12个月滚动求和的同比作为存量增速代理
+                df = ak.macro_china_shrzgm()
+                dcol = "月份" if "月份" in df.columns else df.columns[0]
+                inc = pd.to_numeric(df.set_index(df[dcol].map(_parse_cn_month))["社会融资规模增量"],
+                                    errors="coerce").sort_index()
+                roll = inc.rolling(12).sum()
+                s = (roll / roll.shift(12) - 1) * 100
+            elif fn in ("macro_china_gdzctz", "macro_china_consumer_goods_retail"):
+                # 东财月度表: 月份 + 同比增长
+                df = getattr(ak, fn)()
+                s = df.set_index(df["月份"].map(_parse_cn_month))[column or "同比增长"]
+            elif fn == "stock_zh_index_daily":
+                df = ak.stock_zh_index_daily(symbol=code)
+                s = df.set_index("date")["close"]
+            elif fn == "fund_etf_hist_em":
+                df = ak.fund_etf_hist_em(symbol=code, period="daily", adjust="qfq")
+                s = df.set_index("日期")["收盘"]
+            elif fn == "futures_main_sina":
+                df = ak.futures_main_sina(symbol=code)
+                dcol = "日期" if "日期" in df.columns else df.columns[0]
+                s = df.set_index(dcol)[_pick_value_col(df, dcol, "收盘价")]
+            elif fn == "futures_index_ccidx":
+                # 中证商品期货指数 (替代已下线的南华指数接口)
+                df = ak.futures_index_ccidx(symbol=code or "中证商品期货指数")
+                dcol = next(c for c in df.columns if "日期" in str(c) or "date" in str(c).lower())
+                s = df.set_index(dcol)[_pick_value_col(df, dcol)]
+            else:
+                # 金十系月度宏观 (macro_china_cpi_yearly / macro_china_pmi_yearly /
+                # macro_usa_ism_pmi / macro_china_exports_yoy / ...):
+                # 固定返回 [商品, 日期, 今值, 预测值, 前值] —— 必须显式取'今值',
+                # 否则会把全文本的'商品'列误判为数值列 (首跑空序列崩溃的根因)
+                df = getattr(ak, fn)()
+                date_col = next(c for c in df.columns
+                                if "日期" in str(c) or "时间" in str(c)
+                                or "date" in str(c).lower() or "月份" in str(c))
+                if "月份" in str(date_col):
+                    idx = df[date_col].map(_parse_cn_month)
+                else:
+                    idx = pd.to_datetime(df[date_col], errors="coerce")
+                s = df.set_index(idx)[_pick_value_col(df, date_col, column)]
+            break
+        except (ConnectionError, OSError) as exc:  # RemoteDisconnected 等瞬时网络错误
+            last_exc = exc
+            time.sleep(3 * (attempt + 1))
+    else:
+        raise last_exc
+
     s.index = pd.to_datetime(s.index, errors="coerce")
-    return pd.to_numeric(s, errors="coerce").dropna().sort_index()
+    s = s[s.index.notna()]
+    out = pd.to_numeric(s, errors="coerce").dropna().sort_index()
+    if out.empty:
+        raise ValueError(f"{fn} returned no usable rows")
+    return out
 
 
 def fetch_nyfed_acm(cfg: dict, days: int) -> pd.Series:
@@ -314,7 +381,10 @@ def main():
                 s = fetch_csv_url(cfg, days)
             else:
                 raise ValueError(f"unknown source {src}")
-            series[nid] = to_daily(transform_series(s, cfg))
+            cleaned = to_daily(transform_series(s, cfg))
+            if cleaned.empty:
+                raise ValueError("empty series after transform (insufficient history?)")
+            series[nid] = cleaned
             time.sleep(0.4)  # 温和限速
         except Exception as exc:
             print(f"[WARN] {nid} fetch failed: {exc}", file=sys.stderr)
@@ -347,7 +417,7 @@ def main():
             node = dict(value=cfg["value"], change1d=0.0, change5d=0.0,
                         change20d=0.0, change60d=0.0, percentile=50)
             z[nid] = 0.0
-        elif nid in series:
+        elif nid in series and len(series[nid]) > 0:
             s = series[nid]
             node = dict(
                 value=round(float(s.iloc[-1]), 2 if abs(s.iloc[-1]) < 1000 else 0),
