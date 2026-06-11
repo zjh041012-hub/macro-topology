@@ -1,0 +1,459 @@
+nodes:
+  us10y:
+    name: 美国10年期国债收益率
+    category: rates
+    priority: P0
+    unit: '%'
+    description: 长端收益率快速上行,主要由期限溢价与财政供给驱动,而非政策预期。
+    invalidation: 若收益率回落至4.20%下方且美元同步走强,则财政供给主导逻辑失效,回归联储路径框架。
+  us2y:
+    name: 美国2年期国债收益率
+    category: rates
+    priority: P1
+    unit: '%'
+    description: 短端温和上行,联储政策预期变化有限,与长端涨幅明显脱节。
+  us10yreal:
+    name: 美国10年期实际利率
+    category: rates
+    priority: P0
+    unit: '%'
+    description: 实际利率快速上升,可能对黄金和长久期成长资产形成压力。
+    invalidation: 若黄金在实际利率维持高位的情况下持续上涨超过20日,实际利率-黄金负相关框架视为阶段性失效。
+  us10ybe:
+    name: 美国10年期盈亏平衡通胀
+    category: rates
+    priority: P1
+    unit: '%'
+    description: 盈亏平衡通胀基本持稳,本轮名义利率上行未被通胀预期确认。
+  fedfunds:
+    name: 美联储政策利率
+    category: rates
+    priority: P1
+    unit: '%'
+    description: 政策利率维持不变,处于观望期。
+  fedpath:
+    name: 美联储政策利率预期(1Y远期)
+    category: rates
+    priority: P0
+    unit: '%'
+    description: 市场定价的政策路径仅小幅上修,难以解释长端利率的上行斜率。
+  termprem:
+    name: 美债10Y期限溢价
+    category: rates
+    priority: P0
+    unit: '%'
+    description: 期限溢价显著走阔,是本轮长端收益率上行的核心来源。
+    invalidation: 若期限溢价在供给落地后快速回落>20bp,本轮利率冲击视为阶段性结束。
+  us30y:
+    name: 美国30年期国债收益率
+    category: rates
+    priority: P2
+    unit: '%'
+    description: 超长端领涨,曲线远端对供给与财政担忧最敏感。
+  t2s10s:
+    name: 美债2s10s利差
+    category: rates
+    priority: P2
+    unit: '%'
+    description: 曲线熊陡,与供给/期限溢价驱动的利率上行特征一致。
+  cn10y:
+    name: 中国10年期国债收益率
+    category: rates
+    priority: P1
+    unit: '%'
+    description: 中债收益率低位徘徊,与美债走势持续分化,体现独立的国内货币周期。
+  r007:
+    name: R007
+    category: rates
+    priority: P2
+    unit: '%'
+    description: 银行间回购利率平稳,资金面均衡偏松。
+  dr007:
+    name: DR007
+    category: rates
+    priority: P2
+    unit: '%'
+    description: 存款类机构资金利率围绕政策利率窄幅波动。
+  mlf:
+    name: MLF利率
+    category: rates
+    priority: P3
+    unit: '%'
+    description: 中期政策利率维持不变。
+  lpr:
+    name: 1年期LPR
+    category: rates
+    priority: P3
+    unit: '%'
+    description: 贷款市场报价利率持平。
+  sofr:
+    name: SOFR
+    category: rates
+    priority: P3
+    unit: '%'
+    description: 美元隔夜融资利率平稳,无回购市场压力迹象。
+  jgb10y:
+    name: 日本10年期国债收益率
+    category: rates
+    priority: P3
+    unit: '%'
+    description: 日债收益率上行,边际推升全球久期供给压力。
+  bund10y:
+    name: 德国10年期国债收益率
+    category: rates
+    priority: P3
+    unit: '%'
+    description: 欧债跟随美债温和上行。
+  dxy:
+    name: 美元指数
+    category: fx
+    priority: P0
+    unit: idx
+    description: 美债收益率大幅上行的同时美元走弱,与传统利差逻辑显著背离。
+    invalidation: 若美元随利率回升而修复,背离解除;若持续走弱,则指向财政信用溢价与资金流出主导。
+  usdcny:
+    name: 美元兑人民币
+    category: fx
+    priority: P1
+    unit: ''
+    description: 人民币随美元走弱小幅升值,波动可控。
+  eurusd:
+    name: 欧元兑美元
+    category: fx
+    priority: P2
+    unit: ''
+    description: 欧元被动走强,反映美元端压力。
+  usdjpy:
+    name: 美元兑日元
+    category: fx
+    priority: P1
+    unit: ''
+    description: 日元小幅修复,日债收益率上行提供支撑。
+  usdcnh:
+    name: 美元兑离岸人民币
+    category: fx
+    priority: P3
+    unit: ''
+    description: 离岸价差稳定,无明显贬值预期。
+  gbpusd:
+    name: 英镑兑美元
+    category: fx
+    priority: P3
+    unit: ''
+    description: 英镑随美元走弱被动升值。
+  audusd:
+    name: 澳元兑美元
+    category: fx
+    priority: P3
+    unit: ''
+    description: 商品货币受铜价与中国需求改善支撑。
+  uscpi:
+    name: 美国CPI(同比)
+    category: inflation
+    priority: P0
+    unit: '%YoY'
+    description: 通胀回落进程停滞,服务粘性仍高,但尚不足以解释长端利率斜率。
+  uscorecpi:
+    name: 美国核心CPI(同比)
+    category: inflation
+    priority: P1
+    unit: '%YoY'
+    description: 核心通胀缓慢回落,住房分项贡献仍大。
+  uspce:
+    name: 美国核心PCE(同比)
+    category: inflation
+    priority: P2
+    unit: '%YoY'
+    description: 联储目标口径通胀温和。
+  cncpi:
+    name: 中国CPI(同比)
+    category: inflation
+    priority: P2
+    unit: '%YoY'
+    description: 国内通胀低位,需求端弹性有限。
+  cnppi:
+    name: 中国PPI(同比)
+    category: inflation
+    priority: P2
+    unit: '%YoY'
+    description: PPI仍处通缩区间,但跌幅随工业品需求改善收窄。
+  infl5y5y:
+    name: 美国5y5y通胀互换
+    category: inflation
+    priority: P2
+    unit: '%'
+    description: 长期通胀预期锚定良好。
+  crb:
+    name: CRB商品指数
+    category: inflation
+    priority: P2
+    unit: idx
+    description: 商品综合指数温和走强。
+  uspmi:
+    name: 美国制造业PMI
+    category: growth
+    priority: P1
+    unit: idx
+    description: 美国制造业仍在荣枯线下方徘徊。
+  cnpmi:
+    name: 中国制造业PMI
+    category: growth
+    priority: P1
+    unit: idx
+    description: 总量PMI仍弱,但结构出现改善。
+  cnpminew:
+    name: 中国PMI新订单
+    category: growth
+    priority: P1
+    unit: idx
+    description: 新订单重回扩张区间,领先指向工业品需求边际改善。
+  indprod:
+    name: 中国工业增加值(同比)
+    category: growth
+    priority: P2
+    unit: '%YoY'
+    description: 工业生产平稳偏强。
+  retail:
+    name: 社会消费品零售总额(同比)
+    category: growth
+    priority: P2
+    unit: '%YoY'
+    description: 消费温和修复,弹性仍受收入预期约束。
+  fai:
+    name: 固定资产投资(累计同比)
+    category: growth
+    priority: P2
+    unit: '%YoY'
+    description: 投资增速平稳,基建托底。
+  nfp:
+    name: 美国非农新增就业
+    category: growth
+    priority: P2
+    unit: k
+    description: 就业温和降温,未触发衰退信号。
+  unemp:
+    name: 美国失业率
+    category: growth
+    priority: P3
+    unit: '%'
+    description: 失业率小幅抬升但仍处低位。
+  exports:
+    name: 中国出口(同比)
+    category: growth
+    priority: P3
+    unit: '%YoY'
+    description: 出口韧性超预期,支撑制造业订单。
+  inddemand:
+    name: 工业品需求(合成指标)
+    category: growth
+    priority: P2
+    unit: idx
+    description: 由新订单、出口与开工率合成,边际改善趋势确立。
+  usclaims:
+    name: 美国初请失业金人数
+    category: growth
+    priority: P3
+    unit: k
+    description: 初请数据平稳,劳动力市场未见裂痕。
+  m1:
+    name: 中国M1(同比)
+    category: liquidity
+    priority: P2
+    unit: '%YoY'
+    description: M1低位回升,企业活化资金边际改善。
+  m2:
+    name: 中国M2(同比)
+    category: liquidity
+    priority: P2
+    unit: '%YoY'
+    description: 广义货币增速平稳。
+  tsf:
+    name: 社会融资规模存量(同比)
+    category: liquidity
+    priority: P1
+    unit: '%YoY'
+    description: 社融增速企稳,政府债券为主要支撑。
+  usfci:
+    name: 美国金融条件指数
+    category: liquidity
+    priority: P1
+    unit: idx
+    description: 金融条件随利率上行边际收紧,但绝对水平仍偏宽松。
+  fedbs:
+    name: 美联储资产负债表
+    category: liquidity
+    priority: P2
+    unit: $tn
+    description: 缩表按既定节奏推进。
+  rrp:
+    name: 美联储隔夜逆回购(RRP)
+    category: liquidity
+    priority: P3
+    unit: $tn
+    description: RRP余额持续下行,缓冲垫变薄。
+  pboc:
+    name: 央行OMO净投放(7D滚动)
+    category: liquidity
+    priority: P2
+    unit: 亿元
+    description: 公开市场操作维持中性偏松。
+  riskappetite:
+    name: 全球风险偏好指数
+    category: liquidity
+    priority: P1
+    unit: idx
+    description: 风险偏好走弱,但弱化程度与股票回撤不完全匹配。
+  northbound:
+    name: 北向资金(5D净流入)
+    category: liquidity
+    priority: P3
+    unit: 亿元
+    description: 外资温和回流A股。
+  hyspread:
+    name: 美国高收益债信用利差
+    category: credit
+    priority: P0
+    unit: '%'
+    description: 股票回调的同时高收益利差几乎未动,信用市场没有确认衰退或系统性风险担忧。
+    invalidation: 若利差5日内快速走阔超过50bp,背离解除,情景转向风险收缩。
+  igspread:
+    name: 美国投资级信用利差
+    category: credit
+    priority: P1
+    unit: '%'
+    description: 投资级利差处于历史低位区间。
+  vix:
+    name: VIX指数
+    category: credit
+    priority: P1
+    unit: idx
+    description: 股票波动率抬升,但远未到恐慌区间。
+  move:
+    name: MOVE利率波动率指数
+    category: credit
+    priority: P2
+    unit: idx
+    description: 利率波动率显著上行,与期限溢价走阔互为印证。
+  gold:
+    name: 黄金
+    category: asset
+    priority: P0
+    unit: $/oz
+    description: 实际利率上行背景下黄金续创新高,央行购金与法币信用对冲需求主导。
+    invalidation: 若金价随实际利率回落而下跌,传统机会成本框架恢复;若继续同涨,确认财政/信用对冲叙事。
+  oil:
+    name: 原油(WTI)
+    category: asset
+    priority: P1
+    unit: $/bbl
+    description: 油价温和上行,供给端扰动为主,需求定价有限。
+  copper:
+    name: 铜(LME)
+    category: asset
+    priority: P1
+    unit: $/t
+    description: 铜价随中国新订单与工业品需求改善走强。
+  csi300:
+    name: 沪深300
+    category: asset
+    priority: P1
+    unit: idx
+    description: A股核心指数温和修复,与美股回调脱敏。
+  ndx:
+    name: 纳斯达克100
+    category: asset
+    priority: P0
+    unit: idx
+    description: 实际利率冲击下长久期成长股估值显著承压,领跌美股。
+    invalidation: 若实际利率回落而纳指继续下跌,则压力来源转向盈利端,利率框架失效。
+  spx:
+    name: 标普500
+    category: asset
+    priority: P1
+    unit: idx
+    description: 指数回调主要由估值压缩贡献,盈利预期尚稳。
+  cnbond:
+    name: 中国10年期国债期货
+    category: asset
+    priority: P2
+    unit: idx
+    description: 中债期货高位运行,与美债走势分化。
+  convert:
+    name: 中证可转债指数
+    category: asset
+    priority: P2
+    unit: idx
+    description: 转债跟随权益温和修复,估值中性。
+  comidx:
+    name: 南华商品指数
+    category: asset
+    priority: P2
+    unit: idx
+    description: 商品指数受铜与原油带动走强。
+  chipetf:
+    name: 芯片ETF
+    category: asset
+    priority: P2
+    unit: idx
+    description: 高久期成长属性放大实际利率冲击。
+  bankidx:
+    name: 银行指数
+    category: asset
+    priority: P1
+    unit: idx
+    description: 利率上行与曲线陡峭化改善息差预期,银行相对收益显著。
+  valueidx:
+    name: 价值风格指数
+    category: asset
+    priority: P2
+    unit: idx
+    description: 价值风格相对占优。
+  growthidx:
+    name: 成长风格指数
+    category: asset
+    priority: P2
+    unit: idx
+    description: 成长风格大幅跑输,风格分化达到近一年极值。
+  hsi:
+    name: 恒生指数
+    category: asset
+    priority: P3
+    unit: idx
+    description: 港股跟随A股温和修复。
+  em:
+    name: 新兴市场股指(MSCI EM)
+    category: asset
+    priority: P3
+    unit: idx
+    description: 美元走弱为新兴市场提供喘息。
+  goldminers:
+    name: 黄金矿业股
+    category: asset
+    priority: P3
+    unit: idx
+    description: 矿业股弹性放大金价上行。
+  fiscalsupply:
+    name: 美债财政供给压力
+    category: risk
+    priority: P0
+    unit: $tn/Q
+    description: 季度再融资规模超预期,长端国债净供给压力成为利率核心驱动。
+    invalidation: 若财政部下调长端发行占比或买回操作放量,供给冲击逻辑减弱。
+  fiscalworry:
+    name: 财政信用担忧指数
+    category: risk
+    priority: P1
+    unit: idx
+    description: 对美国财政可持续性的担忧升温,正在弱化『利率↑→美元↑』的传统联动。
+  geopolitics:
+    name: 地缘政治风险指数
+    category: risk
+    priority: P2
+    unit: idx
+    description: 地缘风险处于中性区间。
+  debtceiling:
+    name: 债务上限博弈风险
+    category: risk
+    priority: P3
+    unit: idx
+    description: 短期无到期窗口,风险温和。

@@ -1,0 +1,47 @@
+name: macro-topology-data
+
+on:
+  schedule:
+    # 美东收盘后 + 中国数据更新后各跑一次 (UTC)
+    - cron: "30 22 * * 1-5"   # 美东 ~17:30/18:30 收盘后
+    - cron: "30 9 * * 1-5"    # 北京 17:30, 覆盖中国市场收盘与宏观数据
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Build topology data
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python pipeline/build_topology.py --out output
+
+      - name: Commit data
+        run: |
+          git config user.name "macro-topology-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add output/*.json
+          git diff --cached --quiet || git commit -m "data: refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+      # 失败告警: 复用你周报系统的 Gmail SMTP 方案
+      - name: Notify on failure
+        if: failure()
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python pipeline/notify_failure.py || true

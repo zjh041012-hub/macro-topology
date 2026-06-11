@@ -1,0 +1,143 @@
+# ============================================================
+# MACRO TOPOLOGY — 数据源注册表
+# 75 个节点 → 权威数据序列的一次性映射
+#
+# source 取值:
+#   fred        — FRED API (需 FRED_API_KEY, 免费申请)
+#   yahoo       — yfinance 日线
+#   akshare     — AkShare 中国宏观/行情接口 (免费, 接口名偶有变更, 统一在 fetchers 隔离)
+#   nyfed_acm   — 纽约联储 ACM 期限溢价 CSV 直链
+#   treasury    — 美国财政部 FiscalData API (免费, 无需 key)
+#   csv_url     — 直接下载 CSV 的学术/官方数据
+#   derived     — 由其他节点合成 (formula 字段, 在 compute.py 中求值)
+#   manual      — 低频政策变量, 手工维护 (value 字段)
+#
+# transform 取值:
+#   level       — 直接用水平值
+#   yoy         — 同比 (%), 对月度指数列计算
+#   mom_diff    — 环比差分 (非农等)
+#   pct_change  — 价格类, 变化以 % 表示
+#
+# unit_changes: bp = 变化按基点显示 | pct = 按百分比 | pp = 百分点 | idx = 指数点
+# ============================================================
+
+defaults:
+  history_days: 1260        # ~5年, 用于滚动分位数
+  percentile_window: 756    # 3年滚动分位
+  daily_fill: ffill         # 月度数据前向填充成日频
+
+nodes:
+  # ---------------- 利率与货币政策 ----------------
+  us10y:      { source: fred, series: DGS10,            transform: level, unit_changes: bp }
+  us2y:       { source: fred, series: DGS2,             transform: level, unit_changes: bp }
+  us10yreal:  { source: fred, series: DFII10,           transform: level, unit_changes: bp }
+  us10ybe:    { source: fred, series: T10YIE,           transform: level, unit_changes: bp }
+  fedfunds:   { source: fred, series: EFFR,             transform: level, unit_changes: bp }
+  fedpath:    { source: fred, series: DGS1,             transform: level, unit_changes: bp,
+                note: "1Y国债作为未来12个月政策路径的免费代理; 若接入CME FedWatch可替换" }
+  termprem:   { source: nyfed_acm, series: ACMTP10,     transform: level, unit_changes: bp,
+                url: "https://www.newyorkfed.org/medialibrary/media/research/data_indicators/ACMTermPremium.xls" }
+  us30y:      { source: fred, series: DGS30,            transform: level, unit_changes: bp }
+  t2s10s:     { source: fred, series: T10Y2Y,           transform: level, unit_changes: bp }
+  cn10y:      { source: akshare, fn: bond_zh_us_rate,   column: "中国国债收益率10年", transform: level, unit_changes: bp }
+  r007:       { source: akshare, fn: repo_rate_hist,    code: R007,  transform: level, unit_changes: bp,
+                note: "银行间质押式回购; akshare接口若变更只改 fetchers.fetch_akshare" }
+  dr007:      { source: akshare, fn: repo_rate_hist,    code: DR007, transform: level, unit_changes: bp }
+  mlf:        { source: manual, value: 2.00, unit_changes: bp, note: "政策利率, 调整频率低, 调价时手工更新" }
+  lpr:        { source: akshare, fn: macro_china_lpr,   column: "LPR1Y", transform: level, unit_changes: bp }
+  sofr:       { source: fred, series: SOFR,             transform: level, unit_changes: bp }
+  jgb10y:     { source: fred, series: IRLTLT01JPM156N,  transform: level, unit_changes: bp, freq: monthly }
+  bund10y:    { source: fred, series: IRLTLT01DEM156N,  transform: level, unit_changes: bp, freq: monthly }
+
+  # ---------------- 汇率 ----------------
+  dxy:        { source: yahoo, ticker: "DX-Y.NYB",  transform: level, unit_changes: pct }
+  usdcny:     { source: yahoo, ticker: "CNY=X",     transform: level, unit_changes: pct }
+  eurusd:     { source: yahoo, ticker: "EURUSD=X",  transform: level, unit_changes: pct }
+  usdjpy:     { source: yahoo, ticker: "JPY=X",     transform: level, unit_changes: pct }
+  usdcnh:     { source: yahoo, ticker: "CNH=X",     transform: level, unit_changes: pct }
+  gbpusd:     { source: yahoo, ticker: "GBPUSD=X",  transform: level, unit_changes: pct }
+  audusd:     { source: yahoo, ticker: "AUDUSD=X",  transform: level, unit_changes: pct }
+
+  # ---------------- 通胀 ----------------
+  uscpi:      { source: fred, series: CPIAUCSL,  transform: yoy, unit_changes: pp, freq: monthly }
+  uscorecpi:  { source: fred, series: CPILFESL,  transform: yoy, unit_changes: pp, freq: monthly }
+  uspce:      { source: fred, series: PCEPILFE,  transform: yoy, unit_changes: pp, freq: monthly }
+  cncpi:      { source: akshare, fn: macro_china_cpi_yearly, transform: level, unit_changes: pp, freq: monthly }
+  cnppi:      { source: akshare, fn: macro_china_ppi_yearly, transform: level, unit_changes: pp, freq: monthly }
+  infl5y5y:   { source: fred, series: T5YIFR,    transform: level, unit_changes: bp }
+  crb:        { source: yahoo, ticker: "^SPGSCI", transform: level, unit_changes: pct,
+                note: "CRB无免费稳定源, 用S&P GSCI作代理" }
+
+  # ---------------- 增长 ----------------
+  uspmi:      { source: akshare, fn: macro_usa_ism_pmi,  transform: level, unit_changes: idx, freq: monthly }
+  cnpmi:      { source: akshare, fn: macro_china_pmi_yearly, transform: level, unit_changes: idx, freq: monthly }
+  cnpminew:   { source: manual, value: 50.2, unit_changes: idx,
+                note: "PMI新订单分项: 统计局月报发布, akshare无稳定分项接口, 每月手工更新一次或后续接Agent抓取" }
+  indprod:    { source: akshare, fn: macro_china_industrial_production_yoy, transform: level, unit_changes: pp, freq: monthly }
+  retail:     { source: akshare, fn: macro_china_consumer_goods_retail,     transform: level, unit_changes: pp, freq: monthly }
+  fai:        { source: akshare, fn: macro_china_fixed_asset_investment,    transform: level, unit_changes: pp, freq: monthly }
+  nfp:        { source: fred, series: PAYEMS, transform: mom_diff, unit_changes: idx, freq: monthly, scale: 1 }
+  unemp:      { source: fred, series: UNRATE, transform: level, unit_changes: pp, freq: monthly }
+  exports:    { source: akshare, fn: macro_china_exports_yoy, transform: level, unit_changes: pp, freq: monthly }
+  usclaims:   { source: fred, series: ICSA, transform: level, unit_changes: idx, freq: weekly }
+  inddemand:  { source: derived, unit_changes: idx,
+                formula: "0.4*z20(copper) + 0.3*z20(oil) + 0.3*z20(cnppi)",
+                note: "工业品需求合成指标: 铜/油20日动量z分 + PPI z分加权" }
+
+  # ---------------- 流动性与信用 ----------------
+  m1:         { source: akshare, fn: macro_china_money_supply, column: "M1-同比", transform: level, unit_changes: pp, freq: monthly }
+  m2:         { source: akshare, fn: macro_china_money_supply, column: "M2-同比", transform: level, unit_changes: pp, freq: monthly }
+  tsf:        { source: akshare, fn: macro_china_shrzgm, column: "社融存量同比", transform: level, unit_changes: pp, freq: monthly }
+  usfci:      { source: fred, series: NFCI,      transform: level, unit_changes: idx, freq: weekly }
+  fedbs:      { source: fred, series: WALCL,     transform: level, unit_changes: pct, freq: weekly }
+  rrp:        { source: fred, series: RRPONTSYD, transform: level, unit_changes: pct }
+  pboc:       { source: akshare, fn: macro_china_omo, transform: rolling_net_7d, unit_changes: idx,
+                note: "OMO净投放7日滚动; 接口若变更在fetchers调整" }
+  riskappetite: { source: derived, unit_changes: idx,
+                formula: "-0.5*z20(vix) - 0.3*z20(hyspread) + 0.2*z20(em)",
+                note: "全球风险偏好合成: VIX/利差越低、EM越强 → 偏好越高" }
+  northbound: { source: manual, value: 0, unit_changes: idx,
+                note: "北向实时净流入2024年起停止披露, 保留节点, 用调仓周报手工更新或换持股口径" }
+  hyspread:   { source: fred, series: BAMLH0A0HYM2, transform: level, unit_changes: bp, scale: 100 }
+  igspread:   { source: fred, series: BAMLC0A0CM,   transform: level, unit_changes: bp, scale: 100 }
+  vix:        { source: fred, series: VIXCLS, transform: level, unit_changes: idx }
+  move:       { source: yahoo, ticker: "^MOVE", transform: level, unit_changes: idx }
+
+  # ---------------- 资产 ----------------
+  gold:       { source: yahoo, ticker: "GC=F",      transform: level, unit_changes: pct }
+  oil:        { source: yahoo, ticker: "CL=F",      transform: level, unit_changes: pct }
+  copper:     { source: yahoo, ticker: "HG=F",      transform: level, unit_changes: pct, note: "COMEX铜代理LME" }
+  csi300:     { source: yahoo, ticker: "000300.SS", transform: level, unit_changes: pct }
+  ndx:        { source: yahoo, ticker: "^NDX",      transform: level, unit_changes: pct }
+  spx:        { source: yahoo, ticker: "^GSPC",     transform: level, unit_changes: pct }
+  cnbond:     { source: akshare, fn: futures_main_sina, code: T0, transform: level, unit_changes: pct,
+                note: "10年期国债期货主力连续" }
+  convert:    { source: akshare, fn: stock_zh_index_daily, code: sh000832, transform: level, unit_changes: pct,
+                note: "中证转债指数" }
+  comidx:     { source: akshare, fn: futures_nh_price_index, code: NHCI, transform: level, unit_changes: pct,
+                note: "南华商品指数" }
+  chipetf:    { source: akshare, fn: fund_etf_hist_em, code: "512760", transform: level, unit_changes: pct }
+  bankidx:    { source: akshare, fn: stock_zh_index_daily, code: sz399986, transform: level, unit_changes: pct,
+                note: "中证银行指数" }
+  valueidx:   { source: akshare, fn: stock_zh_index_daily, code: sh000919, transform: level, unit_changes: pct,
+                note: "300价值" }
+  growthidx:  { source: akshare, fn: stock_zh_index_daily, code: sh000918, transform: level, unit_changes: pct,
+                note: "300成长" }
+  hsi:        { source: yahoo, ticker: "^HSI", transform: level, unit_changes: pct }
+  em:         { source: yahoo, ticker: "EEM",  transform: level, unit_changes: pct, note: "MSCI EM ETF代理" }
+  goldminers: { source: yahoo, ticker: "GDX",  transform: level, unit_changes: pct }
+
+  # ---------------- 风险事件 ----------------
+  fiscalsupply: { source: treasury, endpoint: "v1/accounting/od/auctions_query",
+                  transform: rolling_issuance_4w, unit_changes: idx,
+                  note: "财政部FiscalData API: 国债拍卖规模4周滚动 → z分; 免费无key" }
+  fiscalworry:  { source: derived, unit_changes: idx,
+                  formula: "0.4*z20(termprem) + 0.35*z20(gold) - 0.25*z20(dxy)",
+                  note: "财政信用担忧合成: 期限溢价↑ + 黄金↑ + 美元↓ 共振时升高" }
+  geopolitics:  { source: csv_url, url: "https://www.matteoiacoviello.com/gpr_files/data_gpr_daily_recent.xls",
+                  column: GPRD, transform: level, unit_changes: idx,
+                  note: "Caldara–Iacoviello GPR日度指数, 学术公开数据" }
+  debtceiling:  { source: derived, unit_changes: idx,
+                  formula: "z60(spread(DTB4WK, DTB3))",
+                  extra_fred: [DTB4WK, DTB3],
+                  note: "1M/3M短债利差异常陡升 = 上限博弈定价; 平时近0" }
