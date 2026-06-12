@@ -1,41 +1,39 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美国10年期实际利率 → 纳斯达克100 → 标普500",
+  "title": "财政信用担忧指数 → 黄金 → 黄金矿业股",
   "nodeIds": [
-   "us10yreal",
-   "ndx",
-   "spx"
-  ],
-  "edgeIds": [
-   "e_real_ndx",
-   "e_ndx_spx"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_2",
-  "title": "美国10年期实际利率 → 黄金 → 黄金矿业股",
-  "nodeIds": [
-   "us10yreal",
+   "fiscalworry",
    "gold",
    "goldminers"
   ],
   "edgeIds": [
-   "e_real_gold",
+   "e_worry_gold",
    "e_gold_miners"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
-  "id": "p_auto_3",
-  "title": "财政信用担忧指数 → 黄金",
+  "id": "p_auto_2",
+  "title": "美债财政供给压力 → 财政信用担忧指数",
   "nodeIds": [
-   "fiscalworry",
-   "gold"
+   "fiscalsupply",
+   "fiscalworry"
   ],
   "edgeIds": [
-   "e_worry_gold"
+   "e_supply_worry"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_3",
+  "title": "原油(WTI) → 美国10年期盈亏平衡通胀",
+  "nodeIds": [
+   "oil",
+   "us10ybe"
+  ],
+  "edgeIds": [
+   "e_oil_be"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
