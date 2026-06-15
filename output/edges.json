@@ -69,7 +69,7 @@
   "relation": "positive",
   "mechanism": "供给压力强化财政可持续性担忧",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_gold",
@@ -78,7 +78,7 @@
   "relation": "positive",
   "mechanism": "法币信用对冲需求推升黄金",
   "strength": 0.75,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_dxy",
@@ -699,7 +699,7 @@
   "relation": "positive",
   "mechanism": "矿业股放大金价弹性",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_com_crb",
