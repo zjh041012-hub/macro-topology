@@ -1,37 +1,25 @@
 [
  {
   "id": "p_auto_1",
-  "title": "财政信用担忧指数 → 美债10Y期限溢价",
+  "title": "原油(WTI) → 美国10年期盈亏平衡通胀",
   "nodeIds": [
-   "fiscalworry",
-   "termprem"
+   "oil",
+   "us10ybe"
   ],
   "edgeIds": [
-   "e_worry_tp"
+   "e_oil_be"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_2",
-  "title": "财政信用担忧指数 → 黄金",
+  "title": "南华商品指数 → CRB商品指数",
   "nodeIds": [
-   "fiscalworry",
-   "gold"
+   "comidx",
+   "crb"
   ],
   "edgeIds": [
-   "e_worry_gold"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_3",
-  "title": "MOVE利率波动率指数 → 美债10Y期限溢价",
-  "nodeIds": [
-   "move",
-   "termprem"
-  ],
-  "edgeIds": [
-   "e_move_tp"
+   "e_com_crb"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
