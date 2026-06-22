@@ -87,7 +87,7 @@
   "relation": "negative",
   "mechanism": "财政信用担忧驱动美元贬值压力",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_bank",
@@ -150,7 +150,7 @@
   "relation": "positive",
   "mechanism": "『鹰派预期→强美元』机制当前被财政信用溢价覆盖,逻辑可能失效",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fed_2y",
@@ -510,7 +510,7 @@
   "relation": "negative",
   "mechanism": "美元计价效应",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_cny",
@@ -528,7 +528,7 @@
   "relation": "negative",
   "mechanism": "指数权重镜像关系",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_jpy",
@@ -555,7 +555,7 @@
   "relation": "negative",
   "mechanism": "镜像关系",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_aud",
@@ -564,7 +564,7 @@
   "relation": "negative",
   "mechanism": "美元与商品货币反向",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_em",
@@ -573,7 +573,7 @@
   "relation": "negative",
   "mechanism": "弱美元缓解新兴市场金融条件",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_dxy_copper",

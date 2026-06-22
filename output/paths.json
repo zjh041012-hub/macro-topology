@@ -1,6 +1,18 @@
 [
  {
   "id": "p_auto_1",
+  "title": "美元指数 → 欧元兑美元",
+  "nodeIds": [
+   "dxy",
+   "eurusd"
+  ],
+  "edgeIds": [
+   "e_dxy_eur"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_2",
   "title": "财政信用担忧指数 → 黄金",
   "nodeIds": [
    "fiscalworry",
@@ -12,26 +24,16 @@
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
-  "id": "p_auto_2",
-  "title": "美债财政供给压力 → 财政信用担忧指数",
-  "nodeIds": [
-   "fiscalsupply",
-   "fiscalworry"
-  ],
-  "edgeIds": [
-   "e_supply_worry"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
   "id": "p_auto_3",
-  "title": "原油(WTI) → 美国10年期盈亏平衡通胀",
+  "title": "财政信用担忧指数 → 美元指数 → 英镑兑美元",
   "nodeIds": [
-   "oil",
-   "us10ybe"
+   "fiscalworry",
+   "dxy",
+   "gbpusd"
   ],
   "edgeIds": [
-   "e_oil_be"
+   "e_worry_dxy",
+   "e_dxy_gbp"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
