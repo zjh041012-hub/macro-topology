@@ -6,7 +6,7 @@
   "relation": "positive",
   "mechanism": "国债净供给放量推升期限溢价",
   "strength": 0.9,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_tp",
@@ -15,7 +15,7 @@
   "relation": "positive",
   "mechanism": "财政可持续性担忧要求更高久期补偿",
   "strength": 0.8,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_tp_10y",
@@ -105,7 +105,7 @@
   "relation": "negative",
   "mechanism": "实际利率与黄金的传统负相关本期失效:同步上行",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_dxy",
@@ -159,7 +159,7 @@
   "relation": "positive",
   "mechanism": "政策路径预期锚定短端",
   "strength": 0.8,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_2y_10y",
@@ -339,7 +339,7 @@
   "relation": "positive",
   "mechanism": "需求改善推升铜价",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_copper_com",
@@ -348,7 +348,7 @@
   "relation": "positive",
   "mechanism": "铜价带动商品指数走强",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fai_dem",
@@ -582,7 +582,7 @@
   "relation": "negative",
   "mechanism": "美元计价商品反向",
   "strength": 0.45,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fedbs_fci",

@@ -1,37 +1,39 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美债财政供给压力 → 美债10Y期限溢价",
+  "title": "美国10年期实际利率 → 黄金 → 黄金矿业股",
   "nodeIds": [
-   "fiscalsupply",
-   "termprem"
+   "us10yreal",
+   "gold",
+   "goldminers"
   ],
   "edgeIds": [
-   "e_supply_tp"
+   "e_real_gold",
+   "e_gold_miners"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_2",
-  "title": "财政信用担忧指数 → 美债10Y期限溢价",
+  "title": "美元指数 → 欧元兑美元",
   "nodeIds": [
-   "fiscalworry",
-   "termprem"
+   "dxy",
+   "eurusd"
   ],
   "edgeIds": [
-   "e_worry_tp"
+   "e_dxy_eur"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_3",
-  "title": "美联储政策利率预期(1Y远期) → 美国2年期国债收益率",
+  "title": "财政信用担忧指数 → 黄金",
   "nodeIds": [
-   "fedpath",
-   "us2y"
+   "fiscalworry",
+   "gold"
   ],
   "edgeIds": [
-   "e_fed_2y"
+   "e_worry_gold"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
