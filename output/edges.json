@@ -339,7 +339,7 @@
   "relation": "positive",
   "mechanism": "需求改善推升铜价",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_copper_com",
@@ -348,7 +348,7 @@
   "relation": "positive",
   "mechanism": "铜价带动商品指数走强",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_fai_dem",
@@ -582,7 +582,7 @@
   "relation": "negative",
   "mechanism": "美元计价商品反向",
   "strength": 0.45,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_fedbs_fci",
