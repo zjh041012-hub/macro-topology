@@ -339,7 +339,7 @@
   "relation": "positive",
   "mechanism": "需求改善推升铜价",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_copper_com",
@@ -348,7 +348,7 @@
   "relation": "positive",
   "mechanism": "铜价带动商品指数走强",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fai_dem",
@@ -555,7 +555,7 @@
   "relation": "negative",
   "mechanism": "镜像关系",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_aud",
@@ -573,7 +573,7 @@
   "relation": "negative",
   "mechanism": "弱美元缓解新兴市场金融条件",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_copper",
@@ -582,7 +582,7 @@
   "relation": "negative",
   "mechanism": "美元计价商品反向",
   "strength": 0.45,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fedbs_fci",
@@ -690,7 +690,7 @@
   "relation": "positive",
   "mechanism": "半导体是纳指核心权重",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_gold_miners",
