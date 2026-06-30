@@ -6,7 +6,7 @@
   "relation": "positive",
   "mechanism": "国债净供给放量推升期限溢价",
   "strength": 0.9,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_tp",
@@ -69,7 +69,7 @@
   "relation": "positive",
   "mechanism": "供给压力强化财政可持续性担忧",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_gold",
@@ -150,7 +150,7 @@
   "relation": "positive",
   "mechanism": "『鹰派预期→强美元』机制当前被财政信用溢价覆盖,逻辑可能失效",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fed_2y",
@@ -555,7 +555,7 @@
   "relation": "negative",
   "mechanism": "镜像关系",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_aud",
@@ -735,7 +735,7 @@
   "relation": "positive",
   "mechanism": "债务上限博弈放大财政担忧",
   "strength": 0.4,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fci_hy2",
