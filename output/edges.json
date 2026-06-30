@@ -555,7 +555,7 @@
   "relation": "negative",
   "mechanism": "镜像关系",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_aud",
