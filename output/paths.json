@@ -1,6 +1,18 @@
 [
  {
   "id": "p_auto_1",
+  "title": "美债财政供给压力 → 美债10Y期限溢价",
+  "nodeIds": [
+   "fiscalsupply",
+   "termprem"
+  ],
+  "edgeIds": [
+   "e_supply_tp"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_2",
   "title": "财政信用担忧指数 → 美债10Y期限溢价",
   "nodeIds": [
    "fiscalworry",
@@ -12,7 +24,7 @@
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
-  "id": "p_auto_2",
+  "id": "p_auto_3",
   "title": "财政信用担忧指数 → 黄金 → 黄金矿业股",
   "nodeIds": [
    "fiscalworry",
@@ -22,22 +34,6 @@
   "edgeIds": [
    "e_worry_gold",
    "e_gold_miners"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_3",
-  "title": "工业品需求(合成指标) → 铜(LME) → 南华商品指数 → CRB商品指数",
-  "nodeIds": [
-   "inddemand",
-   "copper",
-   "comidx",
-   "crb"
-  ],
-  "edgeIds": [
-   "e_dem_copper",
-   "e_copper_com",
-   "e_com_crb"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }

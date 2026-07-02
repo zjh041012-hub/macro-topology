@@ -6,7 +6,7 @@
   "relation": "positive",
   "mechanism": "国债净供给放量推升期限溢价",
   "strength": 0.9,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_worry_tp",
@@ -69,7 +69,7 @@
   "relation": "positive",
   "mechanism": "供给压力强化财政可持续性担忧",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_worry_gold",
@@ -735,7 +735,7 @@
   "relation": "positive",
   "mechanism": "债务上限博弈放大财政担忧",
   "strength": 0.4,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fci_hy2",
