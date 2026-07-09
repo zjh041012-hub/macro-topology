@@ -708,7 +708,7 @@
   "relation": "positive",
   "mechanism": "商品指数联动",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_geo_oil",
