@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "gold",
-  "text": "黄金 -2.8/5D · 76分位"
+  "nodeId": "fedpath",
+  "text": "美联储政策利率预期(1Y远期) +6/5D · 49分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
  "highRiskCount": 19,
  "regime": "EXTREME",
  "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
- "updatedAt": "2026-07-14T11:10:16+00:00"
+ "updatedAt": "2026-07-14T23:27:40+00:00"
 }

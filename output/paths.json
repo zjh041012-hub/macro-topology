@@ -1,13 +1,27 @@
 [
  {
   "id": "p_auto_1",
-  "title": "黄金 → 黄金矿业股",
+  "title": "美国10年期实际利率 → 黄金 → 黄金矿业股",
   "nodeIds": [
+   "us10yreal",
    "gold",
    "goldminers"
   ],
   "edgeIds": [
+   "e_real_gold",
    "e_gold_miners"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_2",
+  "title": "美联储政策利率预期(1Y远期) → 美国2年期国债收益率",
+  "nodeIds": [
+   "fedpath",
+   "us2y"
+  ],
+  "edgeIds": [
+   "e_fed_2y"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
