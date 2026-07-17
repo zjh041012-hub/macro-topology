@@ -690,7 +690,7 @@
   "relation": "positive",
   "mechanism": "半导体是纳指核心权重",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_gold_miners",
