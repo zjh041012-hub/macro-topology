@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "oil",
-  "text": "原油(WTI) +5.21/5D · 84分位"
+  "nodeId": "csi300",
+  "text": "沪深300 -5.57/5D · 74分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 17,
+ "highRiskCount": 18,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 17个高风险节点。",
- "updatedAt": "2026-07-21T11:26:46+00:00"
+ "regimeNote": "自动识别: 0条背离, 18个高风险节点。",
+ "updatedAt": "2026-07-21T23:31:26+00:00"
 }
