@@ -339,7 +339,7 @@
   "relation": "positive",
   "mechanism": "需求改善推升铜价",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_copper_com",
@@ -492,7 +492,7 @@
   "relation": "positive",
   "mechanism": "中国资产联动",
   "strength": 0.5,
-  "status": "DIVERGENCE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_nb_csi",
