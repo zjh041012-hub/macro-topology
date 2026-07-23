@@ -1,13 +1,45 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美联储资产负债表 → 美国金融条件指数",
+  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率 → 纳斯达克100",
   "nodeIds": [
-   "fedbs",
-   "usfci"
+   "termprem",
+   "us10y",
+   "us10yreal",
+   "ndx"
   ],
   "edgeIds": [
-   "e_fedbs_fci"
+   "e_tp_10y",
+   "e_10y_real",
+   "e_real_ndx"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_2",
+  "title": "美联储政策利率预期(1Y远期) → 美国2年期国债收益率 → 美国10年期国债收益率 → 美国30年期国债收益率",
+  "nodeIds": [
+   "fedpath",
+   "us2y",
+   "us10y",
+   "us30y"
+  ],
+  "edgeIds": [
+   "e_fed_2y",
+   "e_2y_10y",
+   "e_10y_30y"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_3",
+  "title": "MOVE利率波动率指数 → 美债10Y期限溢价",
+  "nodeIds": [
+   "move",
+   "termprem"
+  ],
+  "edgeIds": [
+   "e_move_tp"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
