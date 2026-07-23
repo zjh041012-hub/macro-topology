@@ -132,7 +132,7 @@
   "relation": "positive",
   "mechanism": "油价上行未带动盈亏平衡通胀,通胀预期未确认",
   "strength": 0.55,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_style",
@@ -339,7 +339,7 @@
   "relation": "positive",
   "mechanism": "需求改善推升铜价",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_copper_com",

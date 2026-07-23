@@ -1,30 +1,6 @@
 [
  {
   "id": "p_auto_1",
-  "title": "工业品需求(合成指标) → 铜(LME)",
-  "nodeIds": [
-   "inddemand",
-   "copper"
-  ],
-  "edgeIds": [
-   "e_dem_copper"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_2",
-  "title": "原油(WTI) → 美国10年期盈亏平衡通胀",
-  "nodeIds": [
-   "oil",
-   "us10ybe"
-  ],
-  "edgeIds": [
-   "e_oil_be"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_3",
   "title": "美联储资产负债表 → 美国金融条件指数",
   "nodeIds": [
    "fedbs",
