@@ -1,15 +1,17 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率",
+  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率 → 纳斯达克100",
   "nodeIds": [
    "termprem",
    "us10y",
-   "us10yreal"
+   "us10yreal",
+   "ndx"
   ],
   "edgeIds": [
    "e_tp_10y",
-   "e_10y_real"
+   "e_10y_real",
+   "e_real_ndx"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
