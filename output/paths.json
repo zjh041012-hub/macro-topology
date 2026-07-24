@@ -1,17 +1,15 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率 → 纳斯达克100",
+  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率",
   "nodeIds": [
    "termprem",
    "us10y",
-   "us10yreal",
-   "ndx"
+   "us10yreal"
   ],
   "edgeIds": [
    "e_tp_10y",
-   "e_10y_real",
-   "e_real_ndx"
+   "e_10y_real"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
@@ -33,13 +31,13 @@
  },
  {
   "id": "p_auto_3",
-  "title": "MOVE利率波动率指数 → 美债10Y期限溢价",
+  "title": "美国10年期国债收益率 → 银行指数",
   "nodeIds": [
-   "move",
-   "termprem"
+   "us10y",
+   "bankidx"
   ],
   "edgeIds": [
-   "e_move_tp"
+   "e_10y_bank"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
