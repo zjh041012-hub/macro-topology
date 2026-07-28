@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "csi300",
-  "text": "沪深300 +0/5D · 74分位"
+  "nodeId": "bankidx",
+  "text": "银行指数 +3.56/5D · 75分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 17,
+ "highRiskCount": 18,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 17个高风险节点。",
- "updatedAt": "2026-07-27T23:36:56+00:00"
+ "regimeNote": "自动识别: 0条背离, 18个高风险节点。",
+ "updatedAt": "2026-07-28T11:38:25+00:00"
 }
