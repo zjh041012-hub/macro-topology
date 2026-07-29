@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "bankidx",
-  "text": "银行指数 +3.56/5D · 75分位"
+  "text": "银行指数 +2.59/5D · 76分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 21,
+ "highRiskCount": 19,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 21个高风险节点。",
- "updatedAt": "2026-07-28T23:33:09+00:00"
+ "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
+ "updatedAt": "2026-07-29T11:42:56+00:00"
 }
