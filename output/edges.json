@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_real_growth",
@@ -609,7 +609,7 @@
   "relation": "negative",
   "mechanism": "金融条件收紧压制风险资产",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_hy_fci",
@@ -681,7 +681,7 @@
   "relation": "positive",
   "mechanism": "权重股拖累大盘",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_chip_ndx",
