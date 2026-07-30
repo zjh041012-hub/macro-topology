@@ -1,13 +1,13 @@
 [
  {
   "id": "p_auto_1",
-  "title": "纳斯达克100 → 标普500",
+  "title": "MOVE利率波动率指数 → VIX指数",
   "nodeIds": [
-   "ndx",
-   "spx"
+   "move",
+   "vix"
   ],
   "edgeIds": [
-   "e_ndx_spx"
+   "e_move_vix"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
