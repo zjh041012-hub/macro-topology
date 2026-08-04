@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "copper",
-  "text": "铜(LME) +5.26/5D · 100分位"
+  "nodeId": "usdjpy",
+  "text": "美元兑日元 -3.7/5D · 82分位"
  },
  "dominantPathId": "",
  "divergenceCount": 0,
- "highRiskCount": 17,
+ "highRiskCount": 18,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 17个高风险节点。",
- "updatedAt": "2026-08-04T11:42:54+00:00"
+ "regimeNote": "自动识别: 0条背离, 18个高风险节点。",
+ "updatedAt": "2026-08-04T23:35:54+00:00"
 }
