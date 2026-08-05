@@ -492,7 +492,7 @@
   "relation": "positive",
   "mechanism": "中国资产联动",
   "strength": 0.5,
-  "status": "DIVERGENCE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_nb_csi",
