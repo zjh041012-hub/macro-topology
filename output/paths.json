@@ -1,14 +1,1 @@
-[
- {
-  "id": "p_auto_1",
-  "title": "黄金 → 黄金矿业股",
-  "nodeIds": [
-   "gold",
-   "goldminers"
-  ],
-  "edgeIds": [
-   "e_gold_miners"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- }
-]
+[]
