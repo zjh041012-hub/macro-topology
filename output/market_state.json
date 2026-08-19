@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "fiscalsupply",
-  "text": "美债财政供给压力 -10/5D · 99分位"
+  "nodeId": "gold",
+  "text": "黄金 +3.79/5D · 90分位"
  },
- "dominantPathId": "",
+ "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 18,
+ "highRiskCount": 23,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 18个高风险节点。",
- "updatedAt": "2026-08-19T10:02:24+00:00"
+ "regimeNote": "自动识别: 0条背离, 23个高风险节点。",
+ "updatedAt": "2026-08-19T22:53:36+00:00"
 }
