@@ -564,7 +564,7 @@
   "relation": "negative",
   "mechanism": "美元与商品货币反向",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_em",
