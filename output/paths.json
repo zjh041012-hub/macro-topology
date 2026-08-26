@@ -1,18 +1,6 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美元指数 → 欧元兑美元",
-  "nodeIds": [
-   "dxy",
-   "eurusd"
-  ],
-  "edgeIds": [
-   "e_dxy_eur"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_2",
   "title": "财政信用担忧指数 → 黄金 → 黄金矿业股",
   "nodeIds": [
    "fiscalworry",
@@ -26,16 +14,28 @@
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
-  "id": "p_auto_3",
-  "title": "财政信用担忧指数 → 美元指数 → 美元兑日元",
+  "id": "p_auto_2",
+  "title": "铜(LME) → 南华商品指数",
   "nodeIds": [
-   "fiscalworry",
-   "dxy",
-   "usdjpy"
+   "copper",
+   "comidx"
   ],
   "edgeIds": [
-   "e_worry_dxy",
-   "e_dxy_jpy"
+   "e_copper_com"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_3",
+  "title": "VIX指数 → 全球风险偏好指数 → 纳斯达克100",
+  "nodeIds": [
+   "vix",
+   "riskappetite",
+   "ndx"
+  ],
+  "edgeIds": [
+   "e_vix_risk",
+   "e_risk_ndx"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
