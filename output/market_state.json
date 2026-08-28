@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "gold",
-  "text": "黄金 +3.29/5D · 92分位"
+  "text": "黄金 +0.07/5D · 91分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 20,
+ "highRiskCount": 19,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 20个高风险节点。",
- "updatedAt": "2026-08-27T19:58:48+00:00"
+ "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
+ "updatedAt": "2026-08-28T06:16:45+00:00"
 }
