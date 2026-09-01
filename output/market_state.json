@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "gold",
-  "text": "黄金 -3.04/5D · 87分位"
+  "nodeId": "oil",
+  "text": "原油(WTI) +7.04/5D · 91分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 22,
+ "highRiskCount": 21,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 22个高风险节点。",
- "updatedAt": "2026-09-01T01:24:16+00:00"
+ "regimeNote": "自动识别: 0条背离, 21个高风险节点。",
+ "updatedAt": "2026-09-01T14:17:35+00:00"
 }
