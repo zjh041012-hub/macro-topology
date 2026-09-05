@@ -159,7 +159,7 @@
   "relation": "positive",
   "mechanism": "政策路径预期锚定短端",
   "strength": 0.8,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_2y_10y",
