@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "usdjpy",
-  "text": "美元兑日元 -3.85/5D · 56分位"
+  "text": "美元兑日元 -3.7/5D · 56分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 19,
+ "highRiskCount": 20,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
- "updatedAt": "2026-09-08T00:39:14+00:00"
+ "regimeNote": "自动识别: 0条背离, 20个高风险节点。",
+ "updatedAt": "2026-09-08T13:49:46+00:00"
 }
