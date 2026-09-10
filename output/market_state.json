@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "usdjpy",
-  "text": "美元兑日元 -4.33/5D · 54分位"
+  "nodeId": "oil",
+  "text": "原油(WTI) +5.9/5D · 97分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 20,
+ "highRiskCount": 19,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 20个高风险节点。",
- "updatedAt": "2026-09-09T13:52:57+00:00"
+ "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
+ "updatedAt": "2026-09-10T00:28:29+00:00"
 }
