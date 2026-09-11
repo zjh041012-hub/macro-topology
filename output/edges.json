@@ -681,7 +681,7 @@
   "relation": "positive",
   "mechanism": "权重股拖累大盘",
   "strength": 0.8,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_chip_ndx",
