@@ -33,7 +33,7 @@
   "relation": "positive",
   "mechanism": "名义上行+盈亏平衡持稳 → 实际利率上行",
   "strength": 0.85,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_real_ndx",
