@@ -96,7 +96,7 @@
   "relation": "positive",
   "mechanism": "利率上行+曲线陡峭化改善银行息差",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_real_gold",
@@ -105,7 +105,7 @@
   "relation": "negative",
   "mechanism": "实际利率与黄金的传统负相关本期失效:同步上行",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_dxy",
