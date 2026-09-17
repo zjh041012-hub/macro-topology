@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "fedpath",
-  "text": "美联储政策利率预期(1Y远期) +20/5D · 71分位"
+  "text": "美联储政策利率预期(1Y远期) +11/5D · 72分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 20,
+ "highRiskCount": 22,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 20个高风险节点。",
- "updatedAt": "2026-09-16T14:20:18+00:00"
+ "regimeNote": "自动识别: 0条背离, 22个高风险节点。",
+ "updatedAt": "2026-09-17T00:49:02+00:00"
 }
