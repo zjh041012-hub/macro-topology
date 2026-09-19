@@ -5,8 +5,8 @@
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 24,
+ "highRiskCount": 22,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 24个高风险节点。",
- "updatedAt": "2026-09-18T13:47:13+00:00"
+ "regimeNote": "自动识别: 0条背离, 22个高风险节点。",
+ "updatedAt": "2026-09-19T00:32:21+00:00"
 }
