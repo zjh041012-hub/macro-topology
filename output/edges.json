@@ -24,7 +24,7 @@
   "relation": "positive",
   "mechanism": "期限溢价走阔直接抬升长端名义利率",
   "strength": 0.9,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_10y_real",
@@ -33,7 +33,7 @@
   "relation": "positive",
   "mechanism": "名义上行+盈亏平衡持稳 → 实际利率上行",
   "strength": 0.85,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_real_ndx",
@@ -168,7 +168,7 @@
   "relation": "positive",
   "mechanism": "短端预期沿曲线传导",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_be_10y",
@@ -204,7 +204,7 @@
   "relation": "positive",
   "mechanism": "长端领涨推动曲线熊陡",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_jgb_10y",
@@ -735,7 +735,7 @@
   "relation": "positive",
   "mechanism": "债务上限博弈放大财政担忧",
   "strength": 0.4,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_fci_hy2",
