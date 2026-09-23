@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "us2y",
-  "text": "美国2年期国债收益率 +9/5D · 92分位"
+  "nodeId": "fedpath",
+  "text": "美联储政策利率预期(1Y远期) +0/5D · 73分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 23,
+ "highRiskCount": 25,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 23个高风险节点。",
- "updatedAt": "2026-09-22T14:11:41+00:00"
+ "regimeNote": "自动识别: 0条背离, 25个高风险节点。",
+ "updatedAt": "2026-09-23T00:53:03+00:00"
 }
