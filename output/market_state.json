@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "fedpath",
-  "text": "美联储政策利率预期(1Y远期) +0/5D · 73分位"
+  "nodeId": "fedfunds",
+  "text": "美联储政策利率 +0/5D · 30分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
  "highRiskCount": 25,
  "regime": "EXTREME",
  "regimeNote": "自动识别: 0条背离, 25个高风险节点。",
- "updatedAt": "2026-09-23T14:23:30+00:00"
+ "updatedAt": "2026-09-24T00:45:41+00:00"
 }

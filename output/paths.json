@@ -1,17 +1,15 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美国10年期国债收益率 → 美国10年期实际利率 → 黄金 → 黄金矿业股",
+  "title": "美国10年期国债收益率 → 美国10年期实际利率 → 黄金",
   "nodeIds": [
    "us10y",
    "us10yreal",
-   "gold",
-   "goldminers"
+   "gold"
   ],
   "edgeIds": [
    "e_10y_real",
-   "e_real_gold",
-   "e_gold_miners"
+   "e_real_gold"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
