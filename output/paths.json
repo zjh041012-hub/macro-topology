@@ -1,34 +1,20 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美国10年期国债收益率 → 美国10年期实际利率 → 黄金 → 黄金矿业股",
+  "title": "美国10年期国债收益率 → 美国10年期实际利率 → 黄金",
   "nodeIds": [
    "us10y",
    "us10yreal",
-   "gold",
-   "goldminers"
+   "gold"
   ],
   "edgeIds": [
    "e_10y_real",
-   "e_real_gold",
-   "e_gold_miners"
+   "e_real_gold"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_2",
-  "title": "财政信用担忧指数 → 美债10Y期限溢价",
-  "nodeIds": [
-   "fiscalworry",
-   "termprem"
-  ],
-  "edgeIds": [
-   "e_worry_tp"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_3",
   "title": "美国10年期国债收益率 → 美元指数 → 欧元兑美元",
   "nodeIds": [
    "us10y",
@@ -38,6 +24,20 @@
   "edgeIds": [
    "e_10y_dxy",
    "e_dxy_eur"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_3",
+  "title": "美联储政策利率预期(1Y远期) → 美国2年期国债收益率 → 美国10年期国债收益率",
+  "nodeIds": [
+   "fedpath",
+   "us2y",
+   "us10y"
+  ],
+  "edgeIds": [
+   "e_fed_2y",
+   "e_2y_10y"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
