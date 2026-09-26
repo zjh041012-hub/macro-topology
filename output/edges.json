@@ -195,7 +195,7 @@
   "relation": "positive",
   "mechanism": "长端联动,超长端对供给更敏感",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_curve",
