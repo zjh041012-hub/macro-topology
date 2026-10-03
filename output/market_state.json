@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "us10yreal",
-  "text": "美国10年期实际利率 +10/5D · 100分位"
+  "text": "美国10年期实际利率 +5/5D · 100分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 27,
+ "highRiskCount": 22,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 27个高风险节点。",
- "updatedAt": "2026-10-02T15:59:36+00:00"
+ "regimeNote": "自动识别: 0条背离, 22个高风险节点。",
+ "updatedAt": "2026-10-03T01:21:02+00:00"
 }
