@@ -618,7 +618,7 @@
   "relation": "positive",
   "mechanism": "信用利差是金融条件分项",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_ig_hy",
@@ -744,7 +744,7 @@
   "relation": "positive",
   "mechanism": "条件收紧推升再融资成本",
   "strength": 0.4,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_sofr_fci",
@@ -753,6 +753,6 @@
   "relation": "positive",
   "mechanism": "货币市场利率传导",
   "strength": 0.3,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  }
 ]
