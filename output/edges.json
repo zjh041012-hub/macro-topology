@@ -24,7 +24,7 @@
   "relation": "positive",
   "mechanism": "期限溢价走阔直接抬升长端名义利率",
   "strength": 0.9,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_real",
@@ -60,7 +60,7 @@
   "relation": "positive",
   "mechanism": "利率波动率上行抬升期限溢价补偿",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_supply_worry",
@@ -537,7 +537,7 @@
   "relation": "positive",
   "mechanism": "美日利差与美元定价",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_cnh",

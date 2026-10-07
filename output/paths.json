@@ -1,14 +1,16 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美国10年期国债收益率 → 美国10年期实际利率 → 黄金 → 黄金矿业股",
+  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率 → 黄金 → 黄金矿业股",
   "nodeIds": [
+   "termprem",
    "us10y",
    "us10yreal",
    "gold",
    "goldminers"
   ],
   "edgeIds": [
+   "e_tp_10y",
    "e_10y_real",
    "e_real_gold",
    "e_gold_miners"
