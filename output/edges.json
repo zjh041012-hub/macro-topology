@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "DIVERGENCE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_real_growth",
@@ -537,7 +537,7 @@
   "relation": "positive",
   "mechanism": "美日利差与美元定价",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_cnh",
@@ -708,7 +708,7 @@
   "relation": "positive",
   "mechanism": "商品指数联动",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_geo_oil",
