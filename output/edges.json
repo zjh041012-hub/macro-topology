@@ -150,7 +150,7 @@
   "relation": "positive",
   "mechanism": "『鹰派预期→强美元』机制当前被财政信用溢价覆盖,逻辑可能失效",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_fed_2y",
@@ -159,7 +159,7 @@
   "relation": "positive",
   "mechanism": "政策路径预期锚定短端",
   "strength": 0.8,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_2y_10y",
@@ -168,7 +168,7 @@
   "relation": "positive",
   "mechanism": "短端预期沿曲线传导",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_be_10y",
@@ -186,7 +186,7 @@
   "relation": "positive",
   "mechanism": "现行利率构成路径起点",
   "strength": 0.4,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_10y_30y",
@@ -204,7 +204,7 @@
   "relation": "positive",
   "mechanism": "长端领涨推动曲线熊陡",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_jgb_10y",
@@ -537,7 +537,7 @@
   "relation": "positive",
   "mechanism": "美日利差与美元定价",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_cnh",
