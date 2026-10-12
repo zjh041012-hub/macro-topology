@@ -348,7 +348,7 @@
   "relation": "positive",
   "mechanism": "铜价带动商品指数走强",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_fai_dem",
@@ -537,7 +537,7 @@
   "relation": "positive",
   "mechanism": "美日利差与美元定价",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_cnh",
@@ -582,7 +582,7 @@
   "relation": "negative",
   "mechanism": "美元计价商品反向",
   "strength": 0.45,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_fedbs_fci",
@@ -699,7 +699,7 @@
   "relation": "positive",
   "mechanism": "矿业股放大金价弹性",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_com_crb",
