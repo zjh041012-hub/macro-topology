@@ -699,7 +699,7 @@
   "relation": "positive",
   "mechanism": "矿业股放大金价弹性",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_com_crb",
