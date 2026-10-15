@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "fedfunds",
-  "text": "美联储政策利率 +0/5D · 32分位"
+  "nodeId": "hyspread",
+  "text": "美国高收益债信用利差 +1/5D · 68分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 22,
+ "highRiskCount": 19,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 22个高风险节点。",
- "updatedAt": "2026-10-14T14:41:19+00:00"
+ "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
+ "updatedAt": "2026-10-15T00:45:31+00:00"
 }
