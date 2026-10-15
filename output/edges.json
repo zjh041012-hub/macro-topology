@@ -231,7 +231,7 @@
   "relation": "negative",
   "mechanism": "实际利率冲击高久期科技资产",
   "strength": 0.55,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_10y_value",
@@ -564,7 +564,7 @@
   "relation": "negative",
   "mechanism": "美元与商品货币反向",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_em",
@@ -672,7 +672,7 @@
   "relation": "positive",
   "mechanism": "风险偏好驱动新兴市场资金流",
   "strength": 0.45,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_ndx_spx",
