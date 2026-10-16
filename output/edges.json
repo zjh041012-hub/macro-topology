@@ -510,7 +510,7 @@
   "relation": "negative",
   "mechanism": "美元计价效应",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_cny",
@@ -528,7 +528,7 @@
   "relation": "negative",
   "mechanism": "指数权重镜像关系",
   "strength": 0.8,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_jpy",
@@ -564,7 +564,7 @@
   "relation": "negative",
   "mechanism": "美元与商品货币反向",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_em",
@@ -573,7 +573,7 @@
   "relation": "negative",
   "mechanism": "弱美元缓解新兴市场金融条件",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_dxy_copper",
