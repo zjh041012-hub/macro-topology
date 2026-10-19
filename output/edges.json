@@ -645,7 +645,7 @@
   "relation": "negative",
   "mechanism": "波动率抬升压制风险偏好",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_move_vix",
@@ -654,7 +654,7 @@
   "relation": "positive",
   "mechanism": "利率波动外溢至股票波动",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_risk_ndx",

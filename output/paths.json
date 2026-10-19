@@ -29,12 +29,14 @@
  },
  {
   "id": "p_auto_3",
-  "title": "全球风险偏好指数 → 新兴市场股指(MSCI EM)",
+  "title": "VIX指数 → 全球风险偏好指数 → 新兴市场股指(MSCI EM)",
   "nodeIds": [
+   "vix",
    "riskappetite",
    "em"
   ],
   "edgeIds": [
+   "e_vix_risk",
    "e_risk_em"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
