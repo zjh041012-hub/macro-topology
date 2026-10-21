@@ -29,13 +29,13 @@
  },
  {
   "id": "p_auto_3",
-  "title": "全球风险偏好指数 → 纳斯达克100",
+  "title": "全球风险偏好指数 → 新兴市场股指(MSCI EM)",
   "nodeIds": [
    "riskappetite",
-   "ndx"
+   "em"
   ],
   "edgeIds": [
-   "e_risk_ndx"
+   "e_risk_em"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
