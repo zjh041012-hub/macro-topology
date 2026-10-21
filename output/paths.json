@@ -13,18 +13,6 @@
  },
  {
   "id": "p_auto_2",
-  "title": "MOVE利率波动率指数 → 美债10Y期限溢价",
-  "nodeIds": [
-   "move",
-   "termprem"
-  ],
-  "edgeIds": [
-   "e_move_tp"
-  ],
-  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
- },
- {
-  "id": "p_auto_3",
   "title": "美国投资级信用利差 → 美国高收益债信用利差 → 美国金融条件指数 → 美国高收益债信用利差",
   "nodeIds": [
    "igspread",
@@ -36,6 +24,18 @@
    "e_ig_hy",
    "e_hy_fci",
    "e_fci_hy2"
+  ],
+  "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
+ },
+ {
+  "id": "p_auto_3",
+  "title": "全球风险偏好指数 → 纳斯达克100",
+  "nodeIds": [
+   "riskappetite",
+   "ndx"
+  ],
+  "edgeIds": [
+   "e_risk_ndx"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
