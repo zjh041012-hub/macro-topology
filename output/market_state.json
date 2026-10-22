@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "fiscalsupply",
-  "text": "美债财政供给压力 -393/5D · 30分位"
+  "nodeId": "hyspread",
+  "text": "美国高收益债信用利差 +4/5D · 82分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
  "highRiskCount": 21,
  "regime": "EXTREME",
  "regimeNote": "自动识别: 0条背离, 21个高风险节点。",
- "updatedAt": "2026-10-22T00:50:03+00:00"
+ "updatedAt": "2026-10-22T14:39:20+00:00"
 }
