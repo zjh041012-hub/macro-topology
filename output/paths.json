@@ -1,39 +1,39 @@
 [
  {
   "id": "p_auto_1",
-  "title": "黄金 → 黄金矿业股",
+  "title": "美国10年期国债收益率 → 美国10年期实际利率",
   "nodeIds": [
-   "gold",
-   "goldminers"
+   "us10y",
+   "us10yreal"
   ],
   "edgeIds": [
-   "e_gold_miners"
+   "e_10y_real"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_2",
-  "title": "美国投资级信用利差 → 美国高收益债信用利差",
+  "title": "财政信用担忧指数 → 黄金 → 黄金矿业股",
   "nodeIds": [
-   "igspread",
-   "hyspread"
+   "fiscalworry",
+   "gold",
+   "goldminers"
   ],
   "edgeIds": [
-   "e_ig_hy"
+   "e_worry_gold",
+   "e_gold_miners"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_3",
-  "title": "VIX指数 → 全球风险偏好指数 → 纳斯达克100",
+  "title": "美国10年期国债收益率 → 美国30年期国债收益率",
   "nodeIds": [
-   "vix",
-   "riskappetite",
-   "ndx"
+   "us10y",
+   "us30y"
   ],
   "edgeIds": [
-   "e_vix_risk",
-   "e_risk_ndx"
+   "e_10y_30y"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
