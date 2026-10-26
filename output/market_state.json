@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "gold",
-  "text": "黄金 -4.09/5D · 66分位"
+  "nodeId": "us10yreal",
+  "text": "美国10年期实际利率 -16/5D · 97分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 1,
  "highRiskCount": 21,
  "regime": "EXTREME",
  "regimeNote": "自动识别: 1条背离, 21个高风险节点。",
- "updatedAt": "2026-10-24T00:58:23+00:00"
+ "updatedAt": "2026-10-26T16:18:11+00:00"
 }
