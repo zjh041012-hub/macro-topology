@@ -168,7 +168,7 @@
   "relation": "positive",
   "mechanism": "短端预期沿曲线传导",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_be_10y",
