@@ -4,9 +4,9 @@
   "text": "美国10年期实际利率 -11/5D · 97分位"
  },
  "dominantPathId": "p_auto_1",
- "divergenceCount": 1,
- "highRiskCount": 22,
+ "divergenceCount": 0,
+ "highRiskCount": 21,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 1条背离, 22个高风险节点。",
- "updatedAt": "2026-10-27T01:36:56+00:00"
+ "regimeNote": "自动识别: 0条背离, 21个高风险节点。",
+ "updatedAt": "2026-10-27T15:32:28+00:00"
 }
