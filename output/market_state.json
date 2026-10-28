@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "us10yreal",
-  "text": "美国10年期实际利率 -11/5D · 97分位"
+  "nodeId": "termprem",
+  "text": "美债10Y期限溢价 -8.8/5D · 61分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 21,
+ "highRiskCount": 20,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 21个高风险节点。",
- "updatedAt": "2026-10-27T15:32:28+00:00"
+ "regimeNote": "自动识别: 0条背离, 20个高风险节点。",
+ "updatedAt": "2026-10-28T01:34:21+00:00"
 }
