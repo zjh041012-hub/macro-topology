@@ -1,1 +1,23 @@
-[]
+[
+ {
+  "id": "d2",
+  "title": "实际利率上行 vs 黄金上涨",
+  "relatedNodeIds": [
+   "us10yreal",
+   "gold"
+  ],
+  "relatedEdgeIds": [
+   "e_real_gold"
+  ],
+  "expectedRelation": "实际利率是黄金的机会成本, 实际利率快速上行时黄金通常承压下跌。",
+  "observedRelation": "us10yreal 20D动量z=-1.5, gold 20D动量z=-1.2, 与预期关系相反。",
+  "window": "20D",
+  "strength": "LOW",
+  "persistence": "PERSISTENT",
+  "alternativeExplanations": [
+   "财政信用对冲需求压倒利率定价",
+   "央行购金等非价格敏感型买盘"
+  ],
+  "invalidationRisk": "LOW"
+ }
+]
