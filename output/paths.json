@@ -29,15 +29,15 @@
  },
  {
   "id": "p_auto_3",
-  "title": "财政信用担忧指数 → 黄金 → 黄金矿业股",
+  "title": "纳斯达克100 → 标普500 → 美国高收益债信用利差",
   "nodeIds": [
-   "fiscalworry",
-   "gold",
-   "goldminers"
+   "ndx",
+   "spx",
+   "hyspread"
   ],
   "edgeIds": [
-   "e_worry_gold",
-   "e_gold_miners"
+   "e_ndx_spx",
+   "e_spx_hy"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }

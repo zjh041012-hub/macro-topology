@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "DIVERGENCE"
+  "status": "INVALIDATED"
  },
  {
   "id": "e_real_growth",
@@ -123,7 +123,7 @@
   "relation": "negative",
   "mechanism": "股票下跌但信用利差未走阔,信用市场未确认风险",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_oil_be",
@@ -627,7 +627,7 @@
   "relation": "positive",
   "mechanism": "信用利差同向联动",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_vix_spx",
@@ -663,7 +663,7 @@
   "relation": "positive",
   "mechanism": "风险偏好支撑成长资产",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_risk_em",
@@ -672,7 +672,7 @@
   "relation": "positive",
   "mechanism": "风险偏好驱动新兴市场资金流",
   "strength": 0.45,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_ndx_spx",
@@ -681,7 +681,7 @@
   "relation": "positive",
   "mechanism": "权重股拖累大盘",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_chip_ndx",
@@ -735,7 +735,7 @@
   "relation": "positive",
   "mechanism": "债务上限博弈放大财政担忧",
   "strength": 0.4,
-  "status": "INACTIVE"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_fci_hy2",
