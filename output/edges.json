@@ -204,7 +204,7 @@
   "relation": "positive",
   "mechanism": "长端领涨推动曲线熊陡",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_jgb_10y",
@@ -636,7 +636,7 @@
   "relation": "negative",
   "mechanism": "波动率与股指反向",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_vix_risk",
@@ -645,7 +645,7 @@
   "relation": "negative",
   "mechanism": "波动率抬升压制风险偏好",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_move_vix",

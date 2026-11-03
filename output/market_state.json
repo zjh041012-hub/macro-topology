@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "ndx",
-  "text": "纳斯达克100 -3.93/5D · 84分位"
+  "text": "纳斯达克100 -5.6/5D · 83分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 1,
- "highRiskCount": 18,
+ "highRiskCount": 19,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 1条背离, 18个高风险节点。",
- "updatedAt": "2026-11-02T19:43:39+00:00"
+ "regimeNote": "自动识别: 1条背离, 19个高风险节点。",
+ "updatedAt": "2026-11-03T03:38:36+00:00"
 }
