@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "INVALIDATED"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_real_growth",
@@ -177,7 +177,7 @@
   "relation": "positive",
   "mechanism": "通胀补偿构成名义利率",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_ff_fedpath",
@@ -231,7 +231,7 @@
   "relation": "negative",
   "mechanism": "实际利率冲击高久期科技资产",
   "strength": 0.55,
-  "status": "INVALIDATED"
+  "status": "INACTIVE"
  },
  {
   "id": "e_10y_value",
@@ -618,7 +618,7 @@
   "relation": "positive",
   "mechanism": "信用利差是金融条件分项",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_ig_hy",
@@ -627,7 +627,7 @@
   "relation": "positive",
   "mechanism": "信用利差同向联动",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_vix_spx",
@@ -690,7 +690,7 @@
   "relation": "positive",
   "mechanism": "半导体是纳指核心权重",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_gold_miners",
@@ -744,7 +744,7 @@
   "relation": "positive",
   "mechanism": "条件收紧推升再融资成本",
   "strength": 0.4,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_sofr_fci",
@@ -753,6 +753,6 @@
   "relation": "positive",
   "mechanism": "货币市场利率传导",
   "strength": 0.3,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  }
 ]

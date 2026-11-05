@@ -29,13 +29,13 @@
  },
  {
   "id": "p_auto_3",
-  "title": "芯片ETF → 纳斯达克100",
+  "title": "美国10年期国债收益率 → 美债2s10s利差",
   "nodeIds": [
-   "chipetf",
-   "ndx"
+   "us10y",
+   "t2s10s"
   ],
   "edgeIds": [
-   "e_chip_ndx"
+   "e_10y_curve"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
