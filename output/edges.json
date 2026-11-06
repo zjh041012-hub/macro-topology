@@ -123,7 +123,7 @@
   "relation": "negative",
   "mechanism": "股票下跌但信用利差未走阔,信用市场未确认风险",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_oil_be",
@@ -618,7 +618,7 @@
   "relation": "positive",
   "mechanism": "信用利差是金融条件分项",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_ig_hy",
@@ -627,7 +627,7 @@
   "relation": "positive",
   "mechanism": "信用利差同向联动",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_vix_spx",
@@ -636,7 +636,7 @@
   "relation": "negative",
   "mechanism": "波动率与股指反向",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_vix_risk",
@@ -645,7 +645,7 @@
   "relation": "negative",
   "mechanism": "波动率抬升压制风险偏好",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_move_vix",
@@ -744,7 +744,7 @@
   "relation": "positive",
   "mechanism": "条件收紧推升再融资成本",
   "strength": 0.4,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_sofr_fci",
