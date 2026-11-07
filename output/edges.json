@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "DIVERGENCE"
+  "status": "INVALIDATED"
  },
  {
   "id": "e_real_growth",
@@ -105,7 +105,7 @@
   "relation": "negative",
   "mechanism": "实际利率与黄金的传统负相关本期失效:同步上行",
   "strength": 0.8,
-  "status": "DIVERGENCE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_10y_dxy",
@@ -168,7 +168,7 @@
   "relation": "positive",
   "mechanism": "短端预期沿曲线传导",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_be_10y",
