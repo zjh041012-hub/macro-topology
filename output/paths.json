@@ -1,15 +1,13 @@
 [
  {
   "id": "p_auto_1",
-  "title": "美债财政供给压力 → 美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率",
+  "title": "美债10Y期限溢价 → 美国10年期国债收益率 → 美国10年期实际利率",
   "nodeIds": [
-   "fiscalsupply",
    "termprem",
    "us10y",
    "us10yreal"
   ],
   "edgeIds": [
-   "e_supply_tp",
    "e_tp_10y",
    "e_10y_real"
   ],

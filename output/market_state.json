@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "vix",
-  "text": "VIX指数 +8.76/5D · 97分位"
+  "text": "VIX指数 +7.03/5D · 97分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 19,
+ "highRiskCount": 17,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
- "updatedAt": "2026-11-07T02:12:20+00:00"
+ "regimeNote": "自动识别: 0条背离, 17个高风险节点。",
+ "updatedAt": "2026-11-09T20:00:21+00:00"
 }
