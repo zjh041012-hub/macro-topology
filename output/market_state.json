@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "vix",
-  "text": "VIX指数 +4.81/5D · 96分位"
+  "nodeId": "ndx",
+  "text": "纳斯达克100 -2.15/5D · 82分位"
  },
  "dominantPathId": "p_auto_1",
- "divergenceCount": 0,
- "highRiskCount": 16,
+ "divergenceCount": 1,
+ "highRiskCount": 17,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 16个高风险节点。",
- "updatedAt": "2026-11-10T04:17:02+00:00"
+ "regimeNote": "自动识别: 1条背离, 17个高风险节点。",
+ "updatedAt": "2026-11-10T17:16:16+00:00"
 }
