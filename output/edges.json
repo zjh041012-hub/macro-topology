@@ -6,7 +6,7 @@
   "relation": "positive",
   "mechanism": "国债净供给放量推升期限溢价",
   "strength": 0.9,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_worry_tp",
@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "INVALIDATED"
+  "status": "DIVERGENCE"
  },
  {
   "id": "e_real_growth",
@@ -123,7 +123,7 @@
   "relation": "negative",
   "mechanism": "股票下跌但信用利差未走阔,信用市场未确认风险",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_oil_be",
@@ -204,7 +204,7 @@
   "relation": "positive",
   "mechanism": "长端领涨推动曲线熊陡",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_jgb_10y",
@@ -618,7 +618,7 @@
   "relation": "positive",
   "mechanism": "信用利差是金融条件分项",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_ig_hy",
@@ -627,7 +627,7 @@
   "relation": "positive",
   "mechanism": "信用利差同向联动",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_vix_spx",
@@ -744,7 +744,7 @@
   "relation": "positive",
   "mechanism": "条件收紧推升再融资成本",
   "strength": 0.4,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_sofr_fci",
