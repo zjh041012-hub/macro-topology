@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "us10ybe",
-  "text": "美国10年期盈亏平衡通胀 -4/5D · 9分位"
+  "nodeId": "gold",
+  "text": "黄金 -5.74/5D · 62分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 14,
+ "highRiskCount": 15,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 14个高风险节点。",
- "updatedAt": "2026-11-12T03:16:52+00:00"
+ "regimeNote": "自动识别: 0条背离, 15个高风险节点。",
+ "updatedAt": "2026-11-12T17:44:15+00:00"
 }
