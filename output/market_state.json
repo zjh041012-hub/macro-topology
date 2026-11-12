@@ -1,12 +1,12 @@
 {
  "topMover": {
   "nodeId": "us10ybe",
-  "text": "美国10年期盈亏平衡通胀 -6/5D · 9分位"
+  "text": "美国10年期盈亏平衡通胀 -4/5D · 9分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 15,
+ "highRiskCount": 14,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 15个高风险节点。",
- "updatedAt": "2026-11-11T17:24:29+00:00"
+ "regimeNote": "自动识别: 0条背离, 14个高风险节点。",
+ "updatedAt": "2026-11-12T03:16:52+00:00"
 }

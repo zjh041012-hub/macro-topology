@@ -33,7 +33,7 @@
   "relation": "positive",
   "mechanism": "名义上行+盈亏平衡持稳 → 实际利率上行",
   "strength": 0.85,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_real_ndx",
@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "DIVERGENCE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_real_growth",
@@ -132,7 +132,7 @@
   "relation": "positive",
   "mechanism": "油价上行未带动盈亏平衡通胀,通胀预期未确认",
   "strength": 0.55,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_style",
@@ -168,7 +168,7 @@
   "relation": "positive",
   "mechanism": "短端预期沿曲线传导",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_be_10y",
@@ -204,7 +204,7 @@
   "relation": "positive",
   "mechanism": "长端领涨推动曲线熊陡",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_jgb_10y",
@@ -348,7 +348,7 @@
   "relation": "positive",
   "mechanism": "铜价带动商品指数走强",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_fai_dem",
