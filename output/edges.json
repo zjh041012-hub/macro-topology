@@ -69,7 +69,7 @@
   "relation": "positive",
   "mechanism": "供给压力强化财政可持续性担忧",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_gold",
@@ -78,7 +78,7 @@
   "relation": "positive",
   "mechanism": "法币信用对冲需求推升黄金",
   "strength": 0.75,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_dxy",
@@ -510,7 +510,7 @@
   "relation": "negative",
   "mechanism": "美元计价效应",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_cny",
@@ -528,7 +528,7 @@
   "relation": "negative",
   "mechanism": "指数权重镜像关系",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_jpy",
@@ -564,7 +564,7 @@
   "relation": "negative",
   "mechanism": "美元与商品货币反向",
   "strength": 0.5,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_em",
@@ -573,7 +573,7 @@
   "relation": "negative",
   "mechanism": "弱美元缓解新兴市场金融条件",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_copper",
@@ -582,7 +582,7 @@
   "relation": "negative",
   "mechanism": "美元计价商品反向",
   "strength": 0.45,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fedbs_fci",
