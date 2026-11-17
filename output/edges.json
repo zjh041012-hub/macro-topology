@@ -636,7 +636,7 @@
   "relation": "negative",
   "mechanism": "波动率与股指反向",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_vix_risk",
