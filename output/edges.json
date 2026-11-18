@@ -78,7 +78,7 @@
   "relation": "positive",
   "mechanism": "法币信用对冲需求推升黄金",
   "strength": 0.75,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_worry_dxy",
@@ -87,7 +87,7 @@
   "relation": "negative",
   "mechanism": "财政信用担忧驱动美元贬值压力",
   "strength": 0.7,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_bank",
@@ -555,7 +555,7 @@
   "relation": "negative",
   "mechanism": "镜像关系",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_dxy_aud",
