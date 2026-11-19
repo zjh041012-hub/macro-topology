@@ -42,7 +42,7 @@
   "relation": "negative",
   "mechanism": "实际利率上行压制长久期成长估值",
   "strength": 0.85,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_real_growth",
@@ -78,7 +78,7 @@
   "relation": "positive",
   "mechanism": "法币信用对冲需求推升黄金",
   "strength": 0.75,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_worry_dxy",
@@ -87,7 +87,7 @@
   "relation": "negative",
   "mechanism": "财政信用担忧驱动美元贬值压力",
   "strength": 0.7,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_10y_bank",
@@ -105,7 +105,7 @@
   "relation": "negative",
   "mechanism": "实际利率与黄金的传统负相关本期失效:同步上行",
   "strength": 0.8,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_10y_dxy",
@@ -150,7 +150,7 @@
   "relation": "positive",
   "mechanism": "『鹰派预期→强美元』机制当前被财政信用溢价覆盖,逻辑可能失效",
   "strength": 0.6,
-  "status": "INACTIVE"
+  "status": "ACTIVE"
  },
  {
   "id": "e_fed_2y",
@@ -645,7 +645,7 @@
   "relation": "negative",
   "mechanism": "波动率抬升压制风险偏好",
   "strength": 0.6,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_move_vix",
@@ -663,7 +663,7 @@
   "relation": "positive",
   "mechanism": "风险偏好支撑成长资产",
   "strength": 0.5,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_risk_em",
@@ -672,7 +672,7 @@
   "relation": "positive",
   "mechanism": "风险偏好驱动新兴市场资金流",
   "strength": 0.45,
-  "status": "ACTIVE"
+  "status": "INACTIVE"
  },
  {
   "id": "e_ndx_spx",
