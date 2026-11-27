@@ -1,45 +1,39 @@
 [
  {
   "id": "p_auto_1",
-  "title": "纳斯达克100 → 标普500 → 美国高收益债信用利差",
+  "title": "美国10年期实际利率 → 纳斯达克100 → 标普500",
   "nodeIds": [
+   "us10yreal",
    "ndx",
-   "spx",
-   "hyspread"
+   "spx"
   ],
   "edgeIds": [
-   "e_ndx_spx",
-   "e_spx_hy"
+   "e_real_ndx",
+   "e_ndx_spx"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_2",
-  "title": "财政信用担忧指数 → 黄金 → 黄金矿业股",
+  "title": "美国10年期实际利率 → 黄金",
   "nodeIds": [
-   "fiscalworry",
-   "gold",
-   "goldminers"
+   "us10yreal",
+   "gold"
   ],
   "edgeIds": [
-   "e_worry_gold",
-   "e_gold_miners"
+   "e_real_gold"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  },
  {
   "id": "p_auto_3",
-  "title": "工业品需求(合成指标) → 铜(LME) → 南华商品指数 → CRB商品指数",
+  "title": "美元指数 → 欧元兑美元",
   "nodeIds": [
-   "inddemand",
-   "copper",
-   "comidx",
-   "crb"
+   "dxy",
+   "eurusd"
   ],
   "edgeIds": [
-   "e_dem_copper",
-   "e_copper_com",
-   "e_com_crb"
+   "e_dxy_eur"
   ],
   "note": "由规则引擎根据20日动量一致性自动识别的激活传导链。"
  }
