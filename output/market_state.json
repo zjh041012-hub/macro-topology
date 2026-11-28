@@ -1,12 +1,12 @@
 {
  "topMover": {
-  "nodeId": "us10ybe",
-  "text": "美国10年期盈亏平衡通胀 -3/5D · 4分位"
+  "nodeId": "copper",
+  "text": "铜(LME) +2.25/5D · 70分位"
  },
  "dominantPathId": "p_auto_1",
  "divergenceCount": 0,
- "highRiskCount": 20,
+ "highRiskCount": 19,
  "regime": "EXTREME",
- "regimeNote": "自动识别: 0条背离, 20个高风险节点。",
- "updatedAt": "2026-11-27T19:07:58+00:00"
+ "regimeNote": "自动识别: 0条背离, 19个高风险节点。",
+ "updatedAt": "2026-11-28T04:05:46+00:00"
 }
